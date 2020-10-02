@@ -28,5 +28,16 @@ describe('Word') do
       expect(Word.all).to(eq([word1]))
     end
   end
+  
+  describe('.find') do
+    it('Words.all will have word 1 in an array') do
+      word1 = Word.new(@att)
+      word1.save
+      Word.find(1)
+      expect(Word.find(1)).to(eq([word1]))
+    end
+  end
+
+
 
 end
