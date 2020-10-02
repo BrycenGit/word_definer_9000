@@ -27,6 +27,10 @@ class Definition
   def save
     @@definitions[self.id] = Definition.new({:def => self.def, :word_id => self.word_id, :id => self.id})
   end
+
+  def self.find(id)
+    @@definitions[id]
+  end
 end
 
 
