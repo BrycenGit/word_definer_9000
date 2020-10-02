@@ -58,7 +58,4 @@ describe('Word') do
       expect(word1.word).to(eq('goodbye'))
     end
   end
-
-
-
 end
