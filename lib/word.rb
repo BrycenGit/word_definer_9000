@@ -19,4 +19,7 @@ class Word
    def self.all
     @@words.values
    end
+
+   def ==(param)
+    self.word == param.word && self.id == param.id
 end
