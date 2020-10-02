@@ -1,14 +1,17 @@
 <h2>Learning Words is Fun</h2><br>
-<h4>Here is a list of words</h4>
+
 
 <% if @words.any? %>
-  <ul>
+
+<h3>Here is a list of words:</h3><br>
+  <div class='list-group'>
     <% @words.each do |word| %>
-      <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
+      <a class="list-group-item list-group-item-action" href="/words/<%= word.id %>"><%= word.word %></a>
     <% end %>
-  </ul>
+  </div>
 <% else %>
-  <p>There are currently no words available</p>
+  <h3>Sorry!</h3>
+  <p>There are currently no words available, Please add below.</p>
 <% end %>
 
 <form action="/words" method="post">

@@ -1,15 +1,18 @@
-<h2>Word: <%= @word.word %></h2><br>
-<h4>Definitions:</h4>
+<h2>You chose the word: <%= @word.word %></h2><br>
+
 
 
 <% if @definitions.any? %>
-  <ul>
+
+<h3>Definitions:</h3>
+  <div class="list-group">
     <% @definitions.each do |definition| %>
-      <li><a href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.definition %></a></li>
+      <a class="list-group-item list-group-item-action" href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.definition %></a>
     <% end %>
-  </ul>
+  </div>
 <% else %>
-  <p>There are currently no definitions</p>
+  <h3>Sorry!</h3>
+  <p>There are currently no definitions, Please add below.</p>
 <% end %>
 
 <form action="/words/<%= @word.id %>" method="post">
