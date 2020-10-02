@@ -2,5 +2,12 @@
 
 <h4>Definition: <%= @definition.definition %></h4>
 
+<form action="/words/<%= @word.id %>" method="post">
+  <input name="def_id" type="hidden" value="<%= @definition.id %>">
+  <input name="_method" type="hidden" value="delete">
+
+  <button type="submit" class="btn">Delete This Definition</button>
+</form><br>
+
 <a href="/words/<%= @word.id %>">Back to word</a>
 
