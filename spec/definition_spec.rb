@@ -21,4 +21,11 @@ describe('Definition') do
       expect(def1).to(eq(def2))
     end
   end
+
+  describe('#save') do
+    it('Definition.all will have 1 def in it') do
+      def1 = Definition.new(@att)
+      expect(Definition.all).to(eq([def1]))
+    end
+  end
 end
