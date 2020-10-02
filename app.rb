@@ -65,3 +65,11 @@ delete('/words/:id') do
   @definitions = Definition.find_by_word(params[:id].to_i)
   erb(:word)
 end
+
+post('/words/:id/definition/:def_id') do
+  @word = Word.find(params[:id].to_i)
+  @definition = Definition.find(params[:def_id].to_i)
+  @definition.update(params[:update])
+  erb(:definition)
+end
+
