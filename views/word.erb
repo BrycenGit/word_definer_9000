@@ -2,8 +2,8 @@
 
 <% if @definitions.any? %>
   <ul>
-    <% @definitions.each do |def| %>
-      <li><a href="/words/<%= word.id %>/definition/<%= def.id %>"><%= word.def %></a></li>
+    <% @definitions.each do |definition| %>
+      <li><a href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.definition %></a></li>
     <% end %>
   </ul>
 <% else %>
@@ -12,10 +12,10 @@
 
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group">
-    <label name="def">Enter definition here</label>
-    <input id="def" class="form-control" name="def" type="text">
+    <label name="definition">Enter definition here</label>
+    <input id="definition" class="form-control" name="definition" type="text">
   </div>
-  <button class="btn btn-primary">Add Definition</button>
+  <button type='submit' class="btn btn-primary">Add Definition</button>
 </form>
 
 <form action="/words/<%= @word.id %>" method="post">

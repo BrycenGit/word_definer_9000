@@ -26,6 +26,16 @@ end
 
 get('/words/:id') do 
   @word = Word.find(params[:id].to_i)
+  @definitions = Definition.find_by_word(params[:id].to_i)
+  erb(:word)
+end
+
+post('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  input = params[:definition].to_s
+  definition = Definition.new({:definition => "#{input}", :word_id => @word.id, :id => nil})
+  definition.save
+  @definitions = Definition.find_by_word(params[:id].to_i)
   erb(:word)
 end
 
@@ -35,11 +45,3 @@ delete('/words/:id') do
   @words = Word.all
   erb(:words)
 end
-
-post('/words/:id') do
-  @word = Word.find(params[:id].to_i)
-  definition = Definition.new({:def => (params[:def]), :word_id => @word.id, :id => nil})
-  definition.save
-  @definitions = Definition.find_by_id(params[:id].to_i)
-end
-

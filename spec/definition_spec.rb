@@ -4,7 +4,7 @@ require 'definition'
 describe('Definition') do
   
   before(:each) do
-    @att = {:def => 'something super cool', :word_id => 1, :id => nil}
+    @att = {:definition => 'something super cool', :word_id => 1, :id => nil}
     Definition.clear
   end
 
@@ -16,8 +16,8 @@ describe('Definition') do
 
   describe('#==') do
     it('definition will be equal if name, id, and word_id are the same') do
-      def1 = Definition.new({:def => 'something super cool', :word_id => 1, :id => 1})
-      def2 = Definition.new({:def => 'something super cool', :word_id => 1, :id => 1})
+      def1 = Definition.new({:definition => 'something super cool', :word_id => 1, :id => 1})
+      def2 = Definition.new({:definition => 'something super cool', :word_id => 1, :id => 1})
       expect(def1).to(eq(def2))
     end
   end
@@ -41,7 +41,7 @@ describe('Definition') do
   describe('#delete') do
     it('it will delete a definition') do
       def1 = Definition.new(@att)
-      def2= Definition.new({:def => 'new cool stuff', :word_id => 1, :id => nil})
+      def2= Definition.new({:definition => 'new cool stuff', :word_id => 1, :id => nil})
       def1.save
       def2.save
       def1.delete
@@ -54,15 +54,15 @@ describe('Definition') do
       def1 = Definition.new(@att)
       def1.save
       def1.update('goodbye')
-      expect(def1.def).to(eq('goodbye'))
+      expect(def1.definition).to(eq('goodbye'))
     end
   end
 
   describe('.find_by_word') do
     it ('it will return an array of definitions that have a matching word id') do
-      def1= Definition.new({:def => 'new cool stuff', :word_id => 1, :id => nil})
-      def2= Definition.new({:def => 'hello', :word_id => 1, :id => nil})
-      def3= Definition.new({:def => 'hello', :word_id => 2, :id => nil})
+      def1= Definition.new({:definition => 'new cool stuff', :word_id => 1, :id => nil})
+      def2= Definition.new({:definition => 'hello', :word_id => 1, :id => nil})
+      def3= Definition.new({:definition => 'hello', :word_id => 2, :id => nil})
       def1.save
       def2.save
       def3.save
