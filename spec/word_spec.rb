@@ -16,7 +16,7 @@ describe('Word') do
   describe('#==') do
     it('word1 will be equal to word3') do
       word1 = Word.new(@att)
-      word3 = Word.new({:word => 'hello', :id => nil})
+      word3 = Word.new({:word => 'hello', :id => 1})
       expect(word1).to(eq(word3))
     end
   end
