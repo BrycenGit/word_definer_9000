@@ -15,6 +15,11 @@ class Definition
     @@definitions = {}
     @@rows = 0
   end
+
+  def self.all
+    @@definitions.values
+  end
+  
 end
 
   

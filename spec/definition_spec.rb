@@ -10,7 +10,7 @@ describe('Definition') do
 
   describe('.all') do
     it('will show an array of all defitions') do
-      expect(Definition.all).to(eq(['hello']))
+      expect(Definition.all).to(eq([]))
     end
   end
 end
