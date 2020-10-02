@@ -35,7 +35,7 @@ describe('Word') do
       word2= Word.new({:word => 'hello', :id => nil})
       word1.save
       word2.save
-      expect(Word.find(1)).to(eq(word2))
+      expect(Word.find(1)).to(eq(word1))
     end
   end
 
