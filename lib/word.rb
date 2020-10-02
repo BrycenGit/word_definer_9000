@@ -27,4 +27,8 @@ class Word
    def save
     @@words[self.id] = Word.new({:word => self.word, :id => self.id})
    end
+
+   def self.find(id)
+    @@words[id]
+   end
 end

@@ -30,11 +30,12 @@ describe('Word') do
   end
   
   describe('.find') do
-    it('Words.all will have word 1 in an array') do
+    it('will match a word by its id') do
       word1 = Word.new(@att)
+      word2= Word.new({:word => 'hello', :id => nil})
       word1.save
-      Word.find(1)
-      expect(Word.find(1)).to(eq([word1]))
+      word2.save
+      expect(Word.find(1)).to(eq(word2))
     end
   end
 
