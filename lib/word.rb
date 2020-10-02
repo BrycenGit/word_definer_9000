@@ -22,4 +22,6 @@ class Word
 
    def ==(param)
     self.word == param.word && self.id == param.id
+   end
+   
 end
