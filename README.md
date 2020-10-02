@@ -1,14 +1,14 @@
-# _Word_definer_
+# _Word Definer_
 
-_Version 1, {DATE}_
+_Version 1, 10/2/2020_
 
-#### _{WHAT WILL IT DO}_
+#### _Input as many words as you want into a list and for each word you can add as many definitions as you want._
 
 ### By: _**Brycen Bartolome**_
 
 ## Description
 
-_{DESCRIPTION HERE}_
+_You can input words into a list. You can also input definitions to each word. you can delete words and definitions and update them as well._
 
 ## Specifications
 
@@ -16,15 +16,18 @@ _{DESCRIPTION HERE}_
 | ---- | -------- | ----- | ------ |
 | 1    |          |       |        |
 
-
 ## Setup & Installation
 
-- Clone project to desktop <code>$ git clone {REPO LINK}</code>
-- Move to project directory <code>$ cd word_definer</code>
-- Open project in vscode <code>$ code .</code>
-- In terminal run <code>$ bundle install</code>
-- In terminal run <code>$ rspec</code>
-- In vscode terminal run <code>$ ruby app.rb</code>
+- Clone project to desktop <code>\$ git clone https://github.com/BrycenGit/word_definer_9000.git</code>
+- Move to project directory <code>\$ cd word_definer</code>
+- Open project in vscode <code>\$ code .</code>
+- In terminal run <code>\$ bundle install</code>
+- In terminal run <code>\$ rspec</code>
+- In vscode terminal run <code>\$ ruby app.rb</code>
+
+## Check it out on Heroku
+
+- [Word Definer](https://immense-ravine-09613.herokuapp.com/)
 
 ## Known Bugs
 
@@ -33,8 +36,8 @@ _There are no known bugs_
 ## Technologies Used
 
 - Ruby
-- Gems: rspec, rack
-- {MORE TECH}
+- Gems: rspec, rack, sinatra
+- Heroku
 
 ### License
 
