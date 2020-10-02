@@ -39,6 +39,17 @@ describe('Word') do
     end
   end
 
+  describe('#delete') do
+    it('it will delete a word') do
+      word1 = Word.new(@att)
+      word2= Word.new({:word => 'hello', :id => nil})
+      word1.save
+      word2.save
+      word1.delete
+      expect(Word.all).to(eq([word1, word2]))
+    end
+  end
+
 
 
 end
