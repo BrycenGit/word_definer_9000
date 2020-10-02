@@ -38,5 +38,15 @@ describe('Definition') do
     end
   end
 
+  describe('#delete') do
+    it('it will delete a definition') do
+      def1 = Definition.new(@att)
+      def2= Definition.new({:def => 'new cool stuff', :word_id => 1, :id => nil})
+      def1.save
+      def2.save
+      def1.delete
+      expect(Definition.all).to(eq([word2]))
+    end
+  end
 
 end
