@@ -11,5 +11,8 @@ class Word
     @id = att.fetch(:id) || @@rows += 1
   end
 
-  
+  def self.clear
+    @@words = {}
+    @@rows = 0
+  end
 end
