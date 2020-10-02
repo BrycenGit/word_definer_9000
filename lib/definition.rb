@@ -23,6 +23,11 @@ class Definition
   def ==(param)
     self.id == param.id && self.def == param.def && self.id == param.id
   end
+
+  def save
+    @@definitions[self.id] = Definition.new({:def => self.def, :word_id => self.word_id, :id => self.id})
+  end
 end
+
 
   
