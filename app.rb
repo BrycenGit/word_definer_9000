@@ -47,8 +47,14 @@ delete('/words') do
 end
 
 get('/words/:id/definition/:def_id') do
-  @word = Word.find(params[:id].to_i)
-  @definition = Definition.find(params[:def_id].to_i)
+  if params[:update]
+    @update = true
+    @word = Word.find(params[:id].to_i)
+    @definition = Definition.find(params[:def_id].to_i)
+  else
+    @word = Word.find(params[:id].to_i)
+    @definition = Definition.find(params[:def_id].to_i)
+  end
   erb(:definition)
 end
 

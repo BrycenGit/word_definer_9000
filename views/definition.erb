@@ -1,3 +1,19 @@
+<% if @update %>
+
+<h2>Word: <%= @word.word %></h2><br>
+
+<h4>Definition: <%= @definition.definition %></h4>
+
+<form action="/words/<%= @word.id %>/definition/<%= @definition.id %>" method="post">
+  <div class="form-group">
+    <label for="update">Update Definition Here</label>
+    <input id="update" class="form-control" name="update" type="text">
+  </div>
+  <button type="submit" class="btn btn-success">Update</button>
+</form>
+
+<% else %>
+
 <h2>Word: <%= @word.word %></h2><br>
 
 <h4>Definition: <%= @definition.definition %></h4>
@@ -6,8 +22,16 @@
   <input name="def_id" type="hidden" value="<%= @definition.id %>">
   <input name="_method" type="hidden" value="delete">
 
-  <button type="submit" class="btn">Delete This Definition</button>
+  <button type="submit" class="btn btn-danger">Delete This Definition</button>
 </form><br>
+
+<form action="/words/<%= @word.id %>/definition/<%= @definition.id %>" method="get">
+  <input name="update" type="hidden" value="update">
+
+  <button type="submit" class="btn btn-primary">Update This Definition</button>
+</form><br>
+
+<% end %>
 
 <a href="/words/<%= @word.id %>">Back to word</a>
 
