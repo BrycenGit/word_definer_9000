@@ -50,7 +50,7 @@ describe('Word') do
     end
   end
 
-  describe('#delete') do
+  describe('#update') do
     it('it will change the word to a new word') do
       word1 = Word.new(@att)
       word1.save
