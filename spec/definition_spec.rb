@@ -58,4 +58,16 @@ describe('Definition') do
     end
   end
 
+  describe('.find_by_word') do
+    it ('it will return an array of definitions that have a matching word id') do
+      def1= Definition.new({:def => 'new cool stuff', :word_id => 1, :id => nil})
+      def2= Definition.new({:def => 'hello', :word_id => 1, :id => nil})
+      def3= Definition.new({:def => 'hello', :word_id => 2, :id => nil})
+      def1.save
+      def2.save
+      def3.save
+      expect(Definition.find_by_word(1)).to(eq([def1]))
+    end
+  end
+
 end
