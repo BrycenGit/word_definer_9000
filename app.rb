@@ -28,3 +28,10 @@ get('/words/:id') do
   erb(:word)
 end
 
+delete('/words/:id') do
+  @word = Word.find(params[:id].to_i)
+  @word.delete
+  @words = Word.all
+  erb(:words)
+end
+
