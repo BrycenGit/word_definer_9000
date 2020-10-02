@@ -1,7 +1,6 @@
 <h2>You chose the word: <%= @word.word %></h2><br>
 
 <% if @update %>
-
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group">
     <label for="update">Update word Here</label>
@@ -38,14 +37,12 @@
 
 <form action="/words/<%= @word.id %>" method="get">
   <input name="update" type="hidden" value="update">
-
   <button type="submit" class="btn btn-primary">Update This Word</button>
 </form><br>
 
 <form action="/words" method="post">
   <input name="id" type="hidden" value="<%= @word.id %>">
   <input name="_method" type="hidden" value="delete">
-
   <button type="submit" class="btn btn-danger">Delete This Word</button>
 </form><br>
 <a class='btn btn-info' href="/words">Back to words</a><br>

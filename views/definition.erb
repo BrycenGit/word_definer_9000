@@ -1,7 +1,6 @@
 <% if @update %>
 
 <h2>Word: <%= @word.word %></h2><br>
-
 <h4>Definition: <%= @definition.definition %></h4><br>
 
 <form action="/words/<%= @word.id %>/definition/<%= @definition.id %>" method="post">
@@ -12,24 +11,21 @@
   <button type="submit" class="btn btn-success">Update</button>
 </form><br>
 <a class="btn btn-primary" href="/words/<%= @word.id %>/definition/<%= @definition.id %>">Nevermind</a><br>
-
 <br><a  class="btn btn-info" href="/words/<%= @word.id %>">Back to word</a>
+
 <% else %>
 
 <h2>Word: <%= @word.word %></h2><br>
-
 <h4>Definition: <%= @definition.definition %></h4><br>
 
 <form action="/words/<%= @word.id %>" method="post">
   <input name="def_id" type="hidden" value="<%= @definition.id %>">
   <input name="_method" type="hidden" value="delete">
-
   <button type="submit" class="btn btn-danger">Delete This Definition</button>
 </form><br>
 
 <form action="/words/<%= @word.id %>/definition/<%= @definition.id %>" method="get">
   <input name="update" type="hidden" value="update">
-
   <button type="submit" class="btn btn-primary">Update This Definition</button>
 </form><br>
 
