@@ -11,9 +11,10 @@
   <p>There are currently no words available</p>
 <% end %>
 
-<form action="/words">
+<form action="/words" method="post">
   <div class="form-group">
     <label for="word">Enter a word</label>
     <input id="word" class="form-control" name="word" type="text">
   </div>
+  <button type="submit" class="btn btn-success">Add Word</button>
 </form>

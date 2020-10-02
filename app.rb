@@ -6,20 +6,22 @@ require './lib/word'
 also_reload('lib/**/*.rb')
 
 get('/') do
-  @words = Words.all
+  @words = Word.all
   erb(:words)
 end
 
 get('/words') do
-  @words = Words.all
+  @words = Word.all
   erb(:words)
 end
 
 post('/words') do
-  @word_param = params[:word]
-  @word = Word.new({:word => @word_param, :id => nil})
-  @word.save
-  @words = Words.all
+  word_param = params[:word]
+  word = Word.new({:word => word_param, :id => nil})
+  word.save
+  @words = Word.all
   erb(:words)
 end
+
+
 
