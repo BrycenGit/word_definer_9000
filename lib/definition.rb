@@ -35,6 +35,10 @@ class Definition
   def delete
     @@definitions.delete(self.id)
   end
+
+  def update(param)
+    self.def=(param)
+  end
 end
 
 
