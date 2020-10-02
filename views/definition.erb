@@ -7,11 +7,13 @@
 <form action="/words/<%= @word.id %>/definition/<%= @definition.id %>" method="post">
   <div class="form-group">
     <label for="update">Update Definition Here</label>
-    <input id="update" class="form-control" name="update" type="text">
+    <input id="update" class="form-control" name="update" type="text" required>
   </div>
   <button type="submit" class="btn btn-success">Update</button>
-</form>
+</form><br>
+<a class="btn btn-info" href="/words/<%= @word.id %>/definition/<%= @definition.id %>">Nevermind</a><br>
 
+<br><a  class="btn btn-info" href="/words/<%= @word.id %>">Back to word</a>
 <% else %>
 
 <h2>Word: <%= @word.word %></h2><br>
@@ -31,7 +33,7 @@
   <button type="submit" class="btn btn-primary">Update This Definition</button>
 </form><br>
 
+<br><a  class="btn btn-info" href="/words/<%= @word.id %>">Back to word</a>
 <% end %>
 
-<a href="/words/<%= @word.id %>">Back to word</a>
 
