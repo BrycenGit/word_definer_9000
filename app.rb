@@ -15,5 +15,11 @@ get('/words') do
   erb(:words)
 end
 
-
+post('/words') do
+  @word_param = params[:word]
+  @word = Word.new({:word => @word_param, :id => nil})
+  @word.save
+  @words = Words.all
+  erb(:words)
+end
 
