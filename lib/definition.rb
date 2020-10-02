@@ -19,7 +19,10 @@ class Definition
   def self.all
     @@definitions.values
   end
-  
+
+  def ==(param)
+    self.id == param.id && self.def == param.def && self.id == param.id
+  end
 end
 
   
