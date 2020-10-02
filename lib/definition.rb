@@ -31,6 +31,10 @@ class Definition
   def self.find(id)
     @@definitions[id]
   end
+
+  def delete
+    @@definitions.delete(self.id)
+  end
 end
 
 

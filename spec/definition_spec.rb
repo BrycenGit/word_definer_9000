@@ -45,7 +45,7 @@ describe('Definition') do
       def1.save
       def2.save
       def1.delete
-      expect(Definition.all).to(eq([word2]))
+      expect(Definition.all).to(eq([def2]))
     end
   end
 
