@@ -29,4 +29,14 @@ describe('Definition') do
       expect(Definition.all).to(eq([def1]))
     end
   end
+
+  describe('.find') do
+    it('will find def by its id') do
+      def1 = Definition.new(@att)
+      def1.save
+      expect(Definition.find).to(eq(def1))
+    end
+  end
+
+
 end
