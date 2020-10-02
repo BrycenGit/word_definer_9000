@@ -20,4 +20,13 @@ describe('Word') do
       expect(word1).to(eq(word3))
     end
   end
+  
+  describe('#save') do
+    it('Words.all will have word 1 in an array') do
+      word1 = Word.new(@att)
+      word1.save
+      expect(Word.all).to(eq(word1))
+    end
+  end
+
 end
