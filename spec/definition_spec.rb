@@ -49,4 +49,13 @@ describe('Definition') do
     end
   end
 
+  describe('#update') do
+    it('it will change the def to a new def') do
+      def1 = Definition.new(@att)
+      def1.save
+      def1.update('goodbye')
+      expect(def1.def).to(eq('goodbye'))
+    end
+  end
+
 end
