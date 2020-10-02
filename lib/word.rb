@@ -15,4 +15,8 @@ class Word
     @@words = {}
     @@rows = 0
   end
+
+   def self.all
+    @@words.values
+   end
 end

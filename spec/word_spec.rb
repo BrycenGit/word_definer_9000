@@ -9,7 +9,7 @@ describe('Word') do
 
   describe('.all') do
     it('will show an array of the values from @@words') do
-      expect(Word.all).to(eq([hello]))
+      expect(Word.all).to(eq([]))
     end
   end
 end
