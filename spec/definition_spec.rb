@@ -66,7 +66,7 @@ describe('Definition') do
       def1.save
       def2.save
       def3.save
-      expect(Definition.find_by_word(1)).to(eq([def1]))
+      expect(Definition.find_by_word(1)).to(eq([def1, def2]))
     end
   end
 
