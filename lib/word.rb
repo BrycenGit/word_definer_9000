@@ -23,5 +23,8 @@ class Word
    def ==(param)
     self.word == param.word && self.id == param.id
    end
-   
+
+   def save
+    @@words[self.id] = Word.new({:word => self.word, :id => self.id})
+   end
 end

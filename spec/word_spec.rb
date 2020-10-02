@@ -25,7 +25,7 @@ describe('Word') do
     it('Words.all will have word 1 in an array') do
       word1 = Word.new(@att)
       word1.save
-      expect(Word.all).to(eq(word1))
+      expect(Word.all).to(eq([word1]))
     end
   end
 
