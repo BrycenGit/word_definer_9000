@@ -46,9 +46,18 @@ describe('Word') do
       word1.save
       word2.save
       word1.delete
-      expect(Word.all).to(eq([word1, word2]))
+      expect(Word.all).to(eq([word2]))
     end
   end
+
+  # describe('#delete') do
+  #   it('it will change the word to a new word') do
+  #     word1 = Word.new(@att)
+  #     word1.save
+  #     word1.update('goodbye')
+  #     expect(word1.word).to(eq('goodbye'))
+  #   end
+  # end
 
 
 
