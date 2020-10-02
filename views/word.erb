@@ -15,6 +15,20 @@
   <p>There are currently no definitions, Please add below.</p>
 <% end %>
 
+<% if @update %>
+
+<form action="/words/<%= @word.id %>" method="post">
+  <div class="form-group">
+    <label for="update">Update word Here</label>
+    <input id="update" class="form-control" name="update" type="text" required>
+  </div>
+  <button type="submit" class="btn btn-success">Update</button>
+</form><br>
+
+<a class="btn btn-info" href="/words/<%= @word.id %>">Nevermind</a><br>
+
+<% else %>
+
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group">
     <label name="definition">Enter definition here</label>
@@ -23,11 +37,19 @@
   <button type='submit' class="btn btn-success">Add Definition</button>
 </form><br>
 
+<form action="/words/<%= @word.id %>" method="get">
+  <input name="update" type="hidden" value="update">
+
+  <button type="submit" class="btn btn-primary">Update This Word</button>
+</form><br>
+
 <form action="/words" method="post">
   <input name="id" type="hidden" value="<%= @word.id %>">
   <input name="_method" type="hidden" value="delete">
 
   <button type="submit" class="btn btn-danger">Delete This Word</button>
 </form><br>
+
+<% end %>
 
 <a class='btn btn-info' href="/words">Back to words</a><br>

@@ -25,17 +25,29 @@ post('/words') do
 end
 
 get('/words/:id') do 
-  @word = Word.find(params[:id].to_i)
-  @definitions = Definition.find_by_word(params[:id].to_i)
+  if params[:update]
+    @update = true
+    @word = Word.find(params[:id].to_i)
+    @definitions = Definition.find_by_word(params[:id].to_i)
+  else
+    @word = Word.find(params[:id].to_i)
+    @definitions = Definition.find_by_word(params[:id].to_i)
+  end
   erb(:word)
 end
 
 post('/words/:id') do
-  @word = Word.find(params[:id].to_i)
-  input = params[:definition].to_s
-  definition = Definition.new({:definition => "#{input}", :word_id => @word.id, :id => nil})
-  definition.save
-  @definitions = Definition.find_by_word(params[:id].to_i)
+  if params[:update]
+    @word = Word.find(params[:id].to_i)
+    @word.update(params[:update])
+    @definitions = Definition.find_by_word(params[:id].to_i)
+  else
+    @word = Word.find(params[:id].to_i)
+    input = params[:definition].to_s
+    definition = Definition.new({:definition => "#{input}", :word_id => @word.id, :id => nil})
+    definition.save
+    @definitions = Definition.find_by_word(params[:id].to_i)
+  end
   erb(:word)
 end
 

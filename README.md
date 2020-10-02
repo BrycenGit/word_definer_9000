@@ -10,12 +10,6 @@ _Version 1, 10/2/2020_
 
 _You can input words into a list. You can also input definitions to each word. you can delete words and definitions and update them as well._
 
-## Specifications
-
-| Spec | Behavior | Input | Output |
-| ---- | -------- | ----- | ------ |
-| 1    |          |       |        |
-
 ## Setup & Installation
 
 - Clone project to desktop <code>\$ git clone https://github.com/BrycenGit/word_definer_9000.git</code>
