@@ -69,5 +69,4 @@ describe('Definition') do
       expect(Definition.find_by_word(1)).to(eq([def1, def2]))
     end
   end
-
 end
