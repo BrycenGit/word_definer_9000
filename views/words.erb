@@ -3,12 +3,12 @@
 
 <% if @words.any? %>
 
-<h3>Here is a list of words:</h3><br>
-  <div class='list-group'>
+<h3>Here is a list of words:</h3>
+  <ul>
     <% @words.each do |word| %>
-      <a class="list-group-item list-group-item-action" href="/words/<%= word.id %>"><%= word.word %></a>
+      <li><a href="/words/<%= word.id %>"><%= word.word %></a></li>
     <% end %>
-  </div>
+  </ul>
 <% else %>
   <h3>Sorry!</h3>
   <p>There are currently no words available, Please add below.</p>

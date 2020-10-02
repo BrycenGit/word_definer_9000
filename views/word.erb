@@ -1,20 +1,5 @@
 <h2>You chose the word: <%= @word.word %></h2><br>
 
-
-
-<% if @definitions.any? %>
-
-<h3>Definitions:</h3>
-  <div class="list-group">
-    <% @definitions.each do |definition| %>
-      <a class="list-group-item list-group-item-action" href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.definition %></a>
-    <% end %>
-  </div>
-<% else %>
-  <h3>Sorry!</h3>
-  <p>There are currently no definitions, Please add below.</p>
-<% end %>
-
 <% if @update %>
 
 <form action="/words/<%= @word.id %>" method="post">
@@ -25,9 +10,23 @@
   <button type="submit" class="btn btn-success">Update</button>
 </form><br>
 
-<a class="btn btn-info" href="/words/<%= @word.id %>">Nevermind</a><br>
+<a class="btn btn-primary" href="/words/<%= @word.id %>">Nevermind</a><br>
+<br><a class='btn btn-info' href="/words">Back to words</a><br>
 
 <% else %>
+
+<% if @definitions.any? %>
+
+<h3>Definitions:</h3>
+  <ul>
+    <% @definitions.each do |definition| %>
+      <li><a href="/words/<%= @word.id %>/definition/<%= definition.id %>"><%= definition.definition %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <h3>Sorry!</h3>
+  <p>There are currently no definitions, Please add below.</p>
+<% end %>
 
 <form action="/words/<%= @word.id %>" method="post">
   <div class="form-group">
@@ -49,7 +48,6 @@
 
   <button type="submit" class="btn btn-danger">Delete This Word</button>
 </form><br>
-
+<a class='btn btn-info' href="/words">Back to words</a><br>
 <% end %>
 
-<a class='btn btn-info' href="/words">Back to words</a><br>
